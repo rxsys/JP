@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".gitignore",
+      "**/.*",
+      ".git/**",
+      ".claude/**",
+      "**/node_modules/**",
+      "build-data.js",
+      "kanjidic2.xml",
+      "kanjidic2.xml.gz",
+      "README.md"
+    ],
+    "cleanUrls": true
+  }
+}
