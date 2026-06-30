@@ -1,0 +1,8 @@
+# Fonte de dados bruta (regenerar com build-data.js se necessário)
+kanjidic2.xml
+kanjidic2.xml.gz
+
+# Sistema
+.DS_Store
+Thumbs.db
+node_modules/

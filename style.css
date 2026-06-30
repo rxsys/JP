@@ -1,0 +1,185 @@
+:root {
+  --bg: #0f1115;
+  --surface: #181b22;
+  --surface-2: #20242e;
+  --border: #2b303b;
+  --text: #e8eaed;
+  --muted: #9aa3b2;
+  --accent: #e63946;
+  --accent-soft: #ff6b6b;
+  --correct: #2fbf71;
+  --correct-bg: #143a26;
+  --wrong: #e5484d;
+  --wrong-bg: #3a1417;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(1200px 600px at 50% -10%, #1b1f29 0%, var(--bg) 60%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.brand { display: flex; flex-direction: column; }
+.brand-jp { font-size: 26px; font-weight: 700; letter-spacing: 2px; }
+.brand-sub { font-size: 13px; color: var(--muted); }
+
+.stats { display: flex; gap: 10px; }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 12px;
+  text-align: center;
+  min-width: 64px;
+}
+.stat-num { display: block; font-size: 20px; font-weight: 700; }
+.stat-label { font-size: 11px; color: var(--muted); }
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.control-group { display: flex; flex-direction: column; gap: 5px; }
+.control-group label { font-size: 12px; color: var(--muted); padding-left: 2px; }
+select {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.ghost-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: auto;
+}
+.ghost-btn:hover { color: var(--text); border-color: var(--muted); }
+
+/* Card */
+.card {
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 20px 24px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.kanji {
+  font-size: 120px;
+  line-height: 1;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS Mincho", serif;
+  user-select: none;
+}
+.card-meta {
+  margin-top: 14px;
+  min-height: 22px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.card-meta b { color: var(--text); font-weight: 600; }
+
+.prompt {
+  text-align: center;
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Options */
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.option {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 14px;
+  font-size: 17px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.08s ease, border-color 0.15s, background 0.15s;
+  word-break: break-word;
+}
+.option:hover:not(:disabled) { border-color: var(--accent-soft); transform: translateY(-2px); }
+.option:disabled { cursor: default; }
+.option.correct { background: var(--correct-bg); border-color: var(--correct); color: #c8f7da; }
+.option.wrong { background: var(--wrong-bg); border-color: var(--wrong); color: #f7c8c8; }
+.option.reading-jp {
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "MS Gothic", sans-serif;
+  font-size: 22px;
+}
+
+/* Feedback */
+.feedback {
+  min-height: 26px;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.feedback.ok { color: var(--correct); }
+.feedback.no { color: var(--wrong); }
+
+.next-btn {
+  display: block;
+  margin: 0 auto;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 34px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.next-btn:hover { background: var(--accent-soft); }
+
+.hidden { display: none !important; }
+
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .kanji { font-size: 92px; }
+  .stats .stat { min-width: 54px; padding: 6px 8px; }
+  .stat-num { font-size: 17px; }
+}

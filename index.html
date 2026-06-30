@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>常用漢字 — Aprender Jōyō Kanji</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-jp">常用漢字</span>
+        <span class="brand-sub">Aprender Jōyō Kanji</span>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" id="stat-score">0</span>
+          <span class="stat-label">Acertos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="stat-streak">0</span>
+          <span class="stat-label">Sequência</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="stat-acc">—</span>
+          <span class="stat-label">Precisão</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="control-group">
+        <label>Nível (grade)</label>
+        <select id="sel-grade">
+          <option value="all">Todos os 2136</option>
+          <option value="1">1 — 80 kanji</option>
+          <option value="2">2 — 160 kanji</option>
+          <option value="3">3 — 200 kanji</option>
+          <option value="4">4 — 202 kanji</option>
+          <option value="5">5 — 193 kanji</option>
+          <option value="6">6 — 191 kanji</option>
+          <option value="8">8 — 1110 (secundário)</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Pergunta</label>
+        <select id="sel-mode">
+          <option value="both">Significado + Leitura</option>
+          <option value="meaning">Só significado</option>
+          <option value="reading">Só leitura</option>
+        </select>
+      </div>
+      <button id="btn-reset" class="ghost-btn" title="Zerar progresso salvo">↺ Zerar</button>
+    </section>
+
+    <main class="quiz" id="quiz">
+      <div class="prompt" id="prompt">Qual o significado deste kanji?</div>
+
+      <div class="card" id="card">
+        <div class="kanji" id="kanji">漢</div>
+        <div class="card-meta" id="card-meta"></div>
+      </div>
+
+      <div class="options" id="options"></div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <button id="btn-next" class="next-btn hidden">Próximo →</button>
+    </main>
+
+    <footer class="footer">
+      Dados: KANJIDIC2 © EDRDG, licença CC BY-SA. <span id="data-count"></span>
+    </footer>
+  </div>
+
+  <script src="kanji-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
